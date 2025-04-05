@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Party Planner Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1c1c1c;
+        color: white;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        border: 1px solid #333;
+      }
+      .header {
+        background-color: #333;
+        padding: 10px;
+        border-bottom: 1px solid #444;
+      }
+      .content {
+        background-color: #2a4045;
+        padding: 15px;
+      }
+      .item-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .item {
+        padding: 10px;
+        background-color: #1c2c30;
+        border-radius: 4px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .output {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #1c2c30;
+        border-radius: 4px;
+        white-space: pre-wrap;
+      }
+      .page-number {
+        text-align: center;
+        padding: 5px;
+        color: #aaa;
+        font-size: 0.9em;
+      }
+      #results {
+        display: none;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Webserver 1:</h2>
+      </div>
+      <div class="content">
+        <h3>Available Party Items:</h3>
+
+        <form id="partyForm" action="http://localhost:5000/" method="GET">
+          <div class="item-list">
+            <div class="item">
+              <input type="checkbox" id="item0" name="items" value="0" />
+              <label for="item0">0: Cake</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item1" name="items" value="1" />
+              <label for="item1">1: Balloons</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item2" name="items" value="2" />
+              <label for="item2">2: Music System</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item3" name="items" value="3" />
+              <label for="item3">3: Lights</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item4" name="items" value="4" />
+              <label for="item4">4: Catering Service</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item5" name="items" value="5" />
+              <label for="item5">5: DJ</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item6" name="items" value="6" />
+              <label for="item6">6: Photo Booth</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item7" name="items" value="7" />
+              <label for="item7">7: Tables</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item8" name="items" value="8" />
+              <label for="item8">8: Chairs</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item9" name="items" value="9" />
+              <label for="item9">9: Drinks</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item10" name="items" value="10" />
+              <label for="item10">10: Party Hats</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item11" name="items" value="11" />
+              <label for="item11">11: Streamers</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item12" name="items" value="12" />
+              <label for="item12">12: Invitation Cards</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item13" name="items" value="13" />
+              <label for="item13">13: Party Games</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item14" name="items" value="14" />
+              <label for="item14">14: Cleaning Service</label>
+            </div>
+          </div>
+
+          <button type="submit">Plan My Party!</button>
+        </form>
+
+        <div id="results" class="output">
+          <h3>Party Plan Results:</h3>
+          <div id="selectedItems"></div>
+          <div id="baseCode"></div>
+          <div id="adjustedCode"></div>
+          <div id="finalCode"></div>
+          <div id="message"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
