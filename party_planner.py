@@ -143,10 +143,9 @@ HTML_TEMPLATE = '''
 '''
 
 def calculate_party_code(selected_indices):
-    # Get the selected items
+
     selected_items = [PARTY_ITEMS[i] for i in selected_indices]
-    
-    # Calculate the base party code using bitwise AND
+   
     base_code = None
     intermediate_results = []
     
@@ -157,15 +156,15 @@ def calculate_party_code(selected_indices):
             base_code &= item["value"]
             intermediate_results.append(base_code)
     
-    # If no items were selected, set base_code to 0
+   
     if base_code is None:
         base_code = 0
         
-    # Add binary representation to each item
+   
     for item in selected_items:
         item["binary"] = format(item["value"], '05b')
     
-    # Apply the conditions to modify the base code
+  
     message = ""
     final_code = base_code
     
@@ -271,5 +270,5 @@ if __name__ == "__main__":
         ip_address = sys.argv[1].split('=')[1]
         app.run(host=ip_address, port=80, debug=False)
     else:
-        # For development, bind to localhost
+       
         app.run(debug=True)
